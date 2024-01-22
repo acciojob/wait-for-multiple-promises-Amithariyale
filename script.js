@@ -17,7 +17,7 @@ const p3=new Promise((resolve,reject)=>{
 const lastTime=new Date().getTime();
 Promise.all([p1,p2,p3])
 	.then((res)=>{
-		document.getElementById('loader').style.display='none';
+		document.getElementById('loading').style.display='none';
 		const table=document.querySelector('thead');
 		for(let i=0;i<res.length;i++){
 			table.innerHTML+=
@@ -36,6 +36,7 @@ Promise.all([p1,p2,p3])
 			</tr>
 			`
 	})
+
 
 
 
