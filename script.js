@@ -1,4 +1,5 @@
 //your JS code here. If required.
+
 const p1=new Promise((resolve,reject)=>{
 	setTimeout(()=>{
 		resolve({p:"Promise 1",t:"2"})
@@ -14,11 +15,12 @@ const p3=new Promise((resolve,reject)=>{
 		resolve({p:"Promise 3",t:"3"})
 	},3000)
 })
+const table=document.getElementById('output');
 const lastTime=new Date().getTime();
 Promise.all([p1,p2,p3])
 	.then((res)=>{
-		document.getElementById('loading').style.display='none';
-		const table=document.querySelector('tbody');
+		document.getElementById('loading').remove();
+		
 		for(let i=0;i<res.length;i++){
 			table.innerHTML+=
 				`
@@ -36,6 +38,7 @@ Promise.all([p1,p2,p3])
 			</tr>
 			`
 	})
+
 
 
 
